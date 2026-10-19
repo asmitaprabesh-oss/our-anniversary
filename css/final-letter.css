@@ -1,0 +1,257 @@
+
+/* FINAL LETTER AND PROMISES */
+
+.final-page {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 36px 18px 28px;
+}
+
+.final-header {
+    margin: 0 auto 28px;
+    text-align: center;
+}
+
+.final-kicker {
+    color: var(--color-pink-dark);
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.final-header h1 {
+    max-width: 590px;
+    margin: 13px auto 10px;
+    color: var(--color-text);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2rem, 7vw, 3rem);
+    line-height: 1.25;
+}
+
+.final-header > p {
+    color: var(--color-muted);
+    font-size: 0.92rem;
+}
+
+/* Letter paper */
+
+.letter-paper {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(24px, 6vw, 48px);
+    border: 1px solid #f1e5e7;
+    border-radius: 5px 5px 18px 5px;
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0,
+            transparent 31px,
+            rgba(198, 153, 165, 0.12) 32px
+        ),
+        #fffdf9;
+    box-shadow:
+        0 15px 45px rgba(98, 58, 70, 0.10),
+        3px 4px 0 rgba(255, 255, 255, 0.8);
+}
+
+.paper-decoration {
+    margin-bottom: 20px;
+    color: var(--color-pink-dark);
+    font-size: 2rem;
+    text-align: center;
+}
+
+.letter-greeting {
+    margin-bottom: 20px;
+    color: #403038;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.4rem;
+    font-style: italic;
+}
+
+.letter-body {
+    color: #4d4146;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1rem;
+    line-height: 2;
+    overflow-wrap: anywhere;
+}
+
+.letter-body p {
+    margin: 0 0 20px;
+    white-space: normal;
+}
+
+.letter-signoff {
+    margin-top: 28px;
+    color: #4d4146;
+    font-family: Georgia, "Times New Roman", serif;
+    font-style: italic;
+}
+
+.letter-signature {
+    margin-top: 7px;
+    color: var(--color-pink-dark);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+.paper-bottom-heart {
+    margin-top: 30px;
+    color: var(--color-pink-dark);
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+/* Promises */
+
+.promises-section {
+    margin-top: 54px;
+    text-align: center;
+}
+
+.promises-section h2 {
+    margin-top: 12px;
+    color: var(--color-text);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.7rem, 6vw, 2.3rem);
+}
+
+.promises-intro {
+    max-width: 470px;
+    margin: 12px auto 25px;
+    color: var(--color-muted);
+    font-size: 0.91rem;
+    line-height: 1.8;
+}
+
+.promises-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
+    text-align: left;
+}
+
+.promise-card {
+    padding: 19px 17px;
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.65);
+    box-shadow: 0 7px 22px rgba(120, 75, 90, 0.06);
+}
+
+.promise-heart {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--color-pink-dark);
+    font-size: 1.25rem;
+}
+
+.promise-card h3 {
+    color: var(--color-text);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.08rem;
+    line-height: 1.4;
+}
+
+.promise-card p {
+    margin-top: 8px;
+    color: var(--color-muted);
+    font-size: 0.85rem;
+    line-height: 1.8;
+}
+
+/* Ending */
+
+.final-message {
+    margin-top: 45px;
+    padding: 30px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.63);
+    text-align: center;
+}
+
+.final-big-heart {
+    display: block;
+    color: var(--color-pink-dark);
+    font-size: 3.5rem;
+    animation: heartbeat 1.8s ease-in-out infinite;
+}
+
+.final-message h2 {
+    margin-top: 10px;
+    color: var(--color-text);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.7rem, 6vw, 2.4rem);
+}
+
+.final-message p {
+    max-width: 500px;
+    margin: 13px auto 0;
+    color: var(--color-muted);
+    font-size: 0.93rem;
+    line-height: 1.9;
+}
+
+.final-message .final-emphasis {
+    color: var(--color-pink-dark);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.05rem;
+    font-style: italic;
+}
+
+.final-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.final-footer {
+    padding: 28px 0 5px;
+    color: var(--color-muted);
+    font-size: 0.76rem;
+    text-align: center;
+}
+
+@media (max-width: 520px) {
+    .final-page {
+        padding: 28px 13px 22px;
+    }
+
+    .letter-paper {
+        padding: 25px 19px;
+    }
+
+    .letter-body {
+        font-size: 0.96rem;
+        line-height: 1.9;
+    }
+
+    .promises-list {
+        grid-template-columns: 1fr;
+    }
+
+    .promise-card {
+        padding: 17px;
+    }
+
+    .final-navigation {
+        flex-direction: column;
+    }
+
+    .final-navigation .button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .final-big-heart {
+        animation: none;
+    }
+}

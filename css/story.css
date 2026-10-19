@@ -1,0 +1,654 @@
+
+/* =========================================
+   OUR STORY TIMELINE
+========================================= */
+
+.story-page {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 38px 20px 30px;
+}
+
+.story-header {
+    max-width: 560px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.story-eyebrow {
+    color: var(--color-pink-dark);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.story-header h1 {
+    margin-top: 14px;
+    color: var(--color-text);
+    font-size: clamp(2rem, 7vw, 3rem);
+    line-height: 1.25;
+}
+
+.story-header h1 span {
+    color: var(--color-pink-dark);
+}
+
+.story-header > p {
+    margin-top: 15px;
+    color: var(--color-muted);
+    font-size: 0.96rem;
+    line-height: 1.9;
+}
+
+.story-divider {
+    margin-top: 24px;
+    color: var(--color-pink-dark);
+    letter-spacing: 7px;
+}
+
+/* =========================================
+   TIMELINE
+========================================= */
+
+.timeline {
+    position: relative;
+    padding: 0 0 20px 28px;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    bottom: 20px;
+    left: 7px;
+    width: 2px;
+    border-radius: 5px;
+    background: linear-gradient(
+        to bottom,
+        var(--color-pink),
+        rgba(217, 111, 151, 0.12)
+    );
+}
+
+.timeline-entry {
+    position: relative;
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+        opacity 600ms ease,
+        transform 600ms ease;
+}
+
+.timeline-entry.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-entry::before {
+    content: "♡";
+    position: absolute;
+    top: 24px;
+    left: -29px;
+    z-index: 2;
+    width: 19px;
+    height: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: var(--color-pink);
+    color: #fff;
+    font-size: 0.7rem;
+    line-height: 1;
+    box-shadow: 0 0 0 4px rgba(241, 165, 189, 0.15);
+}
+
+.timeline-card {
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.78);
+    box-shadow: 0 12px 36px rgba(174, 101, 130, 0.08);
+}
+
+/* =========================================
+   PHOTO COLLAGES
+   2px gaps create a thin separator
+========================================= */
+
+.timeline-image {
+    --collage-gap: 2px;
+
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1.18 / 1;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr 0.85fr;
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: var(--collage-gap);
+    overflow: hidden;
+    background: #fff;
+}
+
+.timeline-photo-tile {
+    position: relative;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+    background: #f8e9ef;
+    cursor: zoom-in;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.timeline-photo-tile img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transition: transform 350ms ease;
+}
+
+/* Six photos */
+
+.timeline-image.photo-count-6 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: auto auto;
+    gap: 2px;
+    height: auto;
+    aspect-ratio: auto;
+    padding: 2px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.timeline-image.photo-count-6 .timeline-photo-tile {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    border-radius: 0;
+}
+
+/* Five photos */
+
+.timeline-image.photo-count-5 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: auto auto;
+    gap: 2px;
+    height: auto;
+    aspect-ratio: auto;
+    padding: 2px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.timeline-image.photo-count-5 .timeline-photo-tile {
+    aspect-ratio: 3 / 4;
+    border-radius: 0;
+}
+
+/* Four photos */
+
+.timeline-image.photo-count-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto auto;
+    gap: 2px;
+    height: auto;
+    aspect-ratio: auto;
+    padding: 2px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.timeline-image.photo-count-4 .timeline-photo-tile {
+    aspect-ratio: 3 / 4;
+    border-radius: 0;
+}
+
+/* Three photos */
+
+.timeline-image.photo-count-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: auto;
+    gap: 2px;
+    height: auto;
+    aspect-ratio: auto;
+    padding: 2px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.timeline-image.photo-count-3 .timeline-photo-tile {
+    aspect-ratio: 3 / 4;
+    border-radius: 0;
+}
+
+/* Two photos */
+
+.timeline-image.photo-count-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto;
+    gap: 2px;
+    height: auto;
+    aspect-ratio: auto;
+    padding: 2px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.timeline-image.photo-count-2 .timeline-photo-tile {
+    aspect-ratio: 3 / 4;
+    border-radius: 0;
+}
+
+/* One photo */
+
+.timeline-image.photo-count-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    aspect-ratio: auto;
+    padding: 2px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.timeline-image.photo-count-1 .timeline-photo-tile {
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 3 / 4;
+    border-radius: 0;
+}
+
+/* Hover is optional; clicking opens the large view */
+
+@media (hover: hover) and (pointer: fine) {
+    .timeline-photo-tile:hover img {
+        transform: scale(1.025);
+    }
+}
+
+/* =========================================
+   EMPTY PHOTO PLACEHOLDER
+========================================= */
+
+.timeline-image-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 16 / 9;
+    padding: 2px;
+    background: #fff;
+}
+
+.photo-placeholder {
+    width: 100%;
+    min-height: 150px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    color: var(--color-muted);
+    background: linear-gradient(135deg, #ffe4ec, #fff4ed);
+}
+
+.photo-placeholder span:first-child {
+    color: var(--color-pink-dark);
+    font-size: 2rem;
+}
+
+.photo-placeholder p {
+    font-size: 0.85rem;
+    line-height: 1.7;
+}
+
+/* =========================================
+   TIMELINE TEXT
+========================================= */
+
+.timeline-content {
+    padding: 24px 25px 26px;
+}
+
+.timeline-date {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: var(--color-pink-dark);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.timeline-content h2 {
+    margin: 0 0 14px;
+    color: var(--color-text);
+    font-size: 1.35rem;
+    line-height: 1.45;
+}
+
+.timeline-content p {
+    margin: 0 0 13px;
+    color: var(--color-muted);
+    font-size: 0.94rem;
+    line-height: 1.95;
+    overflow-wrap: anywhere;
+}
+
+.timeline-content p:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-caption {
+    margin-top: 12px;
+    color: var(--color-pink-dark);
+    font-size: 0.8rem;
+    font-style: italic;
+    line-height: 1.7;
+    text-align: center;
+}
+
+/* =========================================
+   IMAGE LIGHTBOX
+========================================= */
+
+.image-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(20, 12, 17, 0.88);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+        opacity 300ms ease,
+        visibility 300ms ease;
+    cursor: zoom-out;
+    overscroll-behavior: contain;
+}
+
+.image-lightbox.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.image-lightbox-image {
+    display: block;
+    max-width: min(92vw, 1100px);
+    max-height: 88vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    transform: scale(0.82) translateY(12px);
+    transition:
+        transform 380ms cubic-bezier(0.2, 0.75, 0.25, 1),
+        opacity 280ms ease;
+    cursor: default;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.image-lightbox.is-open .image-lightbox-image {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+.image-lightbox-close {
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    font-family: inherit;
+    font-size: 1.7rem;
+    line-height: 1;
+    cursor: pointer;
+    transition:
+        background 200ms ease,
+        transform 200ms ease;
+}
+
+.image-lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.24);
+    transform: rotate(90deg);
+}
+
+.image-lightbox-caption {
+    position: absolute;
+    right: 70px;
+    bottom: 18px;
+    left: 70px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.85rem;
+    line-height: 1.6;
+    text-align: center;
+    pointer-events: none;
+}
+
+/* Prevent background scrolling while a photo is open */
+
+body.lightbox-open {
+    overflow: hidden;
+}
+
+/* =========================================
+   STORY ENDING
+========================================= */
+
+.story-ending {
+    margin: 18px 0 28px 28px;
+    padding: 32px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.72);
+    text-align: center;
+    box-shadow: 0 12px 36px rgba(174, 101, 130, 0.07);
+}
+
+.ending-heart {
+    margin-bottom: 12px;
+    color: var(--color-pink-dark);
+    font-size: 2.5rem;
+    animation: story-heart-beat 2s ease-in-out infinite;
+}
+
+.story-ending h2 {
+    margin-bottom: 14px;
+    color: var(--color-text);
+    font-size: 1.35rem;
+    line-height: 1.5;
+}
+
+.story-ending p {
+    margin: 0 0 14px;
+    color: var(--color-muted);
+    font-size: 0.94rem;
+    line-height: 1.9;
+}
+
+.story-ending .ending-signature {
+    margin: 18px 0 24px;
+    color: var(--color-pink-dark);
+    font-style: italic;
+}
+
+.story-ending .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+
+.story-footer {
+    padding: 16px 0 8px;
+    color: var(--color-muted);
+    font-size: 0.78rem;
+    text-align: center;
+}
+
+@keyframes story-heart-beat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+    .story-page {
+        padding: 28px 14px 24px;
+    }
+
+    .story-header {
+        margin-bottom: 32px;
+    }
+
+    .story-header > p {
+        font-size: 0.9rem;
+    }
+
+    .timeline {
+        padding-left: 22px;
+    }
+
+    .timeline::before {
+        left: 5px;
+    }
+
+    .timeline-entry::before {
+        left: -24px;
+        width: 17px;
+        height: 17px;
+        font-size: 0.65rem;
+    }
+
+    .timeline-entry {
+        margin-bottom: 23px;
+    }
+
+    .timeline-card {
+        border-radius: 17px;
+    }
+
+    .timeline-image.photo-count-6,
+    .timeline-image.photo-count-5 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2px;
+        padding: 2px;
+    }
+
+    .timeline-image.photo-count-6 .timeline-photo-tile,
+    .timeline-image.photo-count-5 .timeline-photo-tile {
+        aspect-ratio: 3 / 4;
+        border-radius: 0;
+    }
+
+    .timeline-image.photo-count-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .timeline-image.photo-count-3 .timeline-photo-tile {
+        aspect-ratio: 3 / 4;
+    }
+
+    .timeline-content {
+        padding: 20px 17px 22px;
+    }
+
+    .timeline-content h2 {
+        font-size: 1.18rem;
+    }
+
+    .timeline-content p {
+        font-size: 0.9rem;
+        line-height: 1.85;
+    }
+
+    .story-ending {
+        margin-left: 22px;
+        padding: 26px 17px;
+        border-radius: 19px;
+    }
+
+    .story-ending h2 {
+        font-size: 1.2rem;
+    }
+
+    .image-lightbox {
+        padding: 12px;
+    }
+
+    .image-lightbox-image {
+        max-width: 96vw;
+        max-height: 82vh;
+        border-radius: 3px;
+    }
+
+    .image-lightbox-close {
+        top: 12px;
+        right: 12px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .image-lightbox-caption {
+        right: 18px;
+        bottom: 12px;
+        left: 18px;
+        font-size: 0.78rem;
+    }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .timeline-entry,
+    .timeline-photo-tile img,
+    .image-lightbox,
+    .image-lightbox-image,
+    .image-lightbox-close {
+        transition: none !important;
+    }
+
+    .timeline-entry {
+        opacity: 1;
+        transform: none;
+    }
+
+    .ending-heart {
+        animation: none;
+    }
+}

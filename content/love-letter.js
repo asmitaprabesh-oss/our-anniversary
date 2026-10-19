@@ -1,0 +1,19 @@
+/* THE LETTER FROM YOUR HEART */
+
+const loveLetter = [
+    `Thaha chha maya, aaja hamro relationship ko 6 months pura bhayeko chha. ❤️ Yo 6 months mero lagi ekdam special chha. Hamro suruwat, hami suru ko din bhete ko, Pashupatinath ma bheteko, hami movie herna gayeko, Kamalpokhari ma baseko samaya, ani sangai bitayeka tyo sano sano moments haru ma sadhai samjhirahanchhu. Hami sangai huda dherai time pauna sakenaun, ani timi Korea gaye pachi ta jhan distance le hamilai tada banayo. Tara timi tada chhau bhandai ma timi prati mero maya kahile pani kam hune chhaina.`,
+
+    `Maya, maile kahile kahi timro man dukhaeko hola, timilai tension diyeko hola, wa mero karan timi dukhi bhayeki hola. Tyo sabai kura ko lagi malai maaf gardinu hai. Ma perfect chhaina, tara ma aafno galti bujhna ra sudharna chahanchhu. Ma chahanchhu timi mero karan le dukhi nahou. Ma timro face ma smile herna chahanchhu, timro happiness ko reason banna chahanchhu, timro sadness ko reason haina. Kahile mero kura le timro man dukheko chha bhane malai bhannu hai. Man ma kura lukayera nabasnu, ma timro kura sunna ra bujhna chahanchhu.`,
+
+    `Mero maya, timi Korea ma chhau ani ma Nepal ma. Timilai kei garo parda ma timro najik aayera hug garna, timro haat samatera basna, wa timilai chahiyeko bela help garna sakdina hola. Yo kura le kahile kahi malai pani naramro lagchha. Tara please, timilai khusi lagda, dukha lagda, tension huda, kei struggle gardai huda, wa kasaile timro man dukhauda, sabai kura malai share garnu hai. Ma harek problem solve garna nasakula, tara timro kura sunna, timilai bujhna ra timro saath dina sadhai try garne chhu. Timile sabai kura aafai handle garnu parchha bhanne chhaina. Ma tada bhaye pani timro manche ho, maya. Timro happiness pani mero lagi important chha, timro sadness pani.`,
+
+    `Ani maya, please aafno khyal ramrari rakhnu hai. Ramrari khanu, time ma sutnu, padhai ra aru kura ko tension le aafailai dherai pressure nadinu. Timi birami huda wa dukhi huda malai bhannu. Sabai kura thik chha bhanera aafno feelings lukaunu pardaina. Ma chahanchhu timi physically pani healthy rahau ra mentally pani khusi rahau. Ma timro najik nahuda pani timile aafno care garna nabirsinu hai.`,
+
+    `Maya, ma timilai euta kura bhanna chahanchhu: please mero maya ma trust garnu. Kahile time namilda, kura kam huda, wa hami busy huda pani mero maya lai doubt nagarnu hai. Harek din dherai kura garna nasakiyela, tara timi mero lagi important chhau bhanne kura change hudaina. Hamro bich ma misunderstanding bhayo bhane assume garnu bhanda ek arka sanga sodhaun, ris uthda pani kura garna nachhodau, ra jati garo bhaye pani milera solve garna try garaun.`,
+
+    `Ma timisanga aafno future imagine garchhu, maya. Ma chahanchhu hami dubai aafno padhai, career ra dreams ma agadi badhaun, ek arka lai support garaun, ra ek din yo distance ko samaya sakera sangai dherai ramra memories banaun. Hamro future aile nai fix chhaina, tara ma chahanchhu hami dubai le effort garera, ek arka lai bujhera ra respect garera hamro relationship lai ajhai ramro banaudai lagaun.`,
+
+    `Happy 6 months aniversary, mero maya. ❤️ Thank you mero life ma aayeko ma, malai maya gareko ma, ra mero life ko yeti special part bhayeko ma. Ma timilai dherai maya garchhu, sayad harek bela ramrari express garna nasakula, tara mero feelings timro lagi sadhai sacho chhan. Ma chahanchhu timi mero saath ma safe feel gara, aafno harek kura share garna sakau, ra mero maya prati kahile pani eklai doubt gardai nabasa.`,
+
+    `I love you so much, mayalu. Aafno khyal rakhnu hai, mero motu. Timi khusi huda ma khusi hunchhu, timi dukhi huda timro dukha sunna ra bujhna ma sadhai ready hunchhu. Distance le hamilai tada rakhe pani, hamro maya ra trust lai tada huna nadium hai. Hamro agadi ajhai dherai memories, sapana ra ramra din haru baaki chhan. Ma tyo sabai timisanga nai experience garna chahanchhu. ♡`
+];

@@ -1,0 +1,266 @@
+
+/* ===================================
+   QUESTION PAGE
+=================================== */
+
+.page-question {
+    min-height: 100vh;
+    min-height: 100svh;
+    overflow-x: hidden;
+    background:
+        radial-gradient(ellipse at top, #ffe4ee 0%, transparent 65%),
+        linear-gradient(145deg, #fffafd, #fff1f6);
+    color: #342630;
+}
+
+.question-page {
+    box-sizing: border-box;
+    width: min(100% - 36px, 620px);
+    min-height: 100vh;
+    min-height: 100svh;
+    margin: 0 auto;
+    padding: 48px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Cute emoji */
+
+.question-emoji {
+    margin-bottom: 20px;
+    font-size: clamp(48px, 8vw, 68px);
+    line-height: 1.2;
+    animation: cuteBounce 2.5s ease-in-out infinite;
+}
+
+/* Small introduction */
+
+.question-label {
+    margin: 0 0 10px;
+    color: #b76a8b;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+/* Main question */
+
+.question-page h1 {
+    max-width: 540px;
+    margin: 0;
+    font-size: clamp(30px, 5.5vw, 46px);
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: -0.8px;
+    text-wrap: balance;
+}
+
+/* Subtitle between label and question */
+
+.question-subtitle {
+    margin: 4px 0 0;
+    color: #947487;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* Yes and No buttons */
+
+.question-buttons {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    width: min(100%, 390px);
+    min-height: 62px;
+    margin-top: 44px;
+}
+
+.question-buttons button {
+    box-sizing: border-box;
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 54px;
+    padding: 14px 12px;
+    border-radius: 999px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+        flex-grow 0.4s ease,
+        opacity 0.4s ease,
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+#yes-button {
+    border: 1px solid #df719b;
+    background: #df719b;
+    color: #ffffff;
+    box-shadow: 0 6px 18px rgb(223 113 155 / 20%);
+}
+
+#yes-button:hover {
+    background: #d65c8c;
+    transform: translateY(-2px);
+}
+
+#no-button {
+    border: 1px solid #e8cbd7;
+    background: rgb(255 255 255 / 85%);
+    color: #90677b;
+}
+
+#no-button:hover {
+    background: #ffffff;
+    transform: translateY(-2px);
+}
+
+.question-buttons button:focus-visible {
+    outline: 3px solid #d65c8c;
+    outline-offset: 4px;
+}
+
+/* Feedback below buttons */
+
+#question-feedback {
+    max-width: 400px;
+    min-height: 24px;
+    margin: 24px 0 0;
+    color: #a4778e;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* No shrinks while Yes grows */
+
+.question-buttons.no-clicked #yes-button {
+    flex-grow: 2;
+}
+
+.question-buttons.no-clicked #no-button {
+    flex-grow: 0.55;
+}
+
+.question-buttons.no-clicked.twice #yes-button {
+    flex-grow: 3;
+}
+
+.question-buttons.no-clicked.twice #no-button {
+    flex-grow: 0.3;
+    opacity: 0.65;
+}
+
+.question-buttons.no-clicked.thrice #yes-button {
+    flex-grow: 5;
+}
+
+.question-buttons.no-clicked.thrice #no-button {
+    flex-grow: 0.05;
+    opacity: 0;
+    padding-left: 0;
+    padding-right: 0;
+    border-width: 0;
+    pointer-events: none;
+}
+
+/* After Yes is clicked */
+
+.question-buttons.answered #yes-button {
+    flex: 1 1 100%;
+    min-height: 60px;
+    font-size: 16px;
+}
+
+.question-buttons.answered #no-button {
+    display: none;
+}
+
+.question-page.celebrating .question-emoji {
+    animation: happyPop 0.6s ease-in-out 2;
+}
+
+/* Animations */
+
+@keyframes cuteBounce {
+    0%, 100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-7px) rotate(3deg);
+    }
+}
+
+@keyframes happyPop {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.22);
+    }
+}
+
+/* Mobile adjustments */
+
+@media (max-width: 480px) {
+    .question-page {
+        width: calc(100% - 32px);
+        padding: 36px 0;
+    }
+
+    .question-emoji {
+        margin-bottom: 18px;
+    }
+
+    .question-label {
+        margin-bottom: 8px;
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+    .question-page h1 {
+        font-size: clamp(28px, 7vw, 36px);
+        line-height: 1.35;
+    }
+
+    .question-subtitle {
+        margin-top: 4px;
+        font-size: 14px;
+    }
+
+    .question-buttons {
+        gap: 10px;
+        margin-top: 36px;
+    }
+
+    .question-buttons button {
+        min-height: 52px;
+        padding: 12px 8px;
+        font-size: 13px;
+    }
+
+    #question-feedback {
+        margin-top: 20px;
+        font-size: 12px;
+    }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+    .question-emoji {
+        animation: none;
+    }
+
+    .question-buttons button {
+        transition: none;
+    }
+}

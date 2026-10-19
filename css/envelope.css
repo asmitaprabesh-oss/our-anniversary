@@ -1,0 +1,583 @@
+
+/* =========================================
+   ENVELOPE PAGE
+========================================= */
+
+.page-envelope {
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 32%,
+            rgba(255, 218, 231, 0.72),
+            transparent 55%
+        ),
+        linear-gradient(150deg, #fffafd 0%, #fff3f7 55%, #fff9f8 100%);
+}
+
+.envelope-screen {
+    box-sizing: border-box;
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 38px 18px;
+}
+
+.envelope-page {
+    width: 100%;
+    max-width: 500px;
+    margin: auto 0;
+
+    text-align: center;
+}
+
+/* =========================================
+   HEADING
+========================================= */
+
+.envelope-eyebrow {
+    margin: 0 0 14px;
+
+    color: var(--color-pink-dark);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.envelope-page h1 {
+    margin: 0;
+
+    color: var(--color-text);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.8rem, 7vw, 2.45rem);
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.envelope-intro {
+    max-width: 340px;
+    margin: 14px auto 32px;
+
+    color: var(--color-muted);
+    font-size: 0.94rem;
+    line-height: 1.85;
+}
+
+/* =========================================
+   ENVELOPE SCENE
+========================================= */
+
+.envelope-scene {
+    position: relative;
+    width: 100%;
+    padding: 48px 0 18px;
+}
+
+.envelope-button {
+    position: relative;
+    display: block;
+
+    width: min(100%, 320px);
+    height: 218px;
+
+    margin: 0 auto;
+    padding: 0;
+
+    border: 0;
+    border-radius: 5px;
+
+    background: transparent;
+    cursor: pointer;
+
+    perspective: 1000px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.envelope-button:focus-visible {
+    outline: 3px solid var(--color-pink-dark);
+    outline-offset: 9px;
+    border-radius: 12px;
+}
+
+.envelope-button:disabled {
+    cursor: default;
+}
+
+/* Envelope base */
+
+.envelope-back {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+
+    overflow: hidden;
+    border-radius: 8px;
+
+    background: linear-gradient(
+        140deg,
+        #f9c8d8,
+        #f2a8c1 65%,
+        #e995b2
+    );
+
+    box-shadow:
+        0 24px 45px rgba(157, 78, 111, 0.18),
+        0 5px 12px rgba(157, 78, 111, 0.08);
+
+    pointer-events: none;
+}
+
+/* Small decorative lines on the envelope */
+
+.envelope-back::after {
+    content: "";
+    position: absolute;
+    inset: 9px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 5px;
+}
+
+/* =========================================
+   LETTER INSIDE THE ENVELOPE
+========================================= */
+
+.envelope-letter {
+    position: absolute;
+    z-index: 1;
+
+    top: 12px;
+    left: 7%;
+    right: 7%;
+
+    height: 190px;
+    box-sizing: border-box;
+    padding: 20px 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    border: 1px solid #f3e5e7;
+    border-radius: 4px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.98),
+            #fffaf5
+        );
+
+    color: var(--color-text);
+
+    box-shadow: 0 3px 12px rgba(93, 47, 63, 0.08);
+
+    transition:
+        top 0.85s cubic-bezier(0.2, 0.75, 0.25, 1),
+        transform 0.85s cubic-bezier(0.2, 0.75, 0.25, 1),
+        box-shadow 0.85s ease;
+}
+
+.letter-small-text,
+.letter-bottom-text {
+    color: #a17b8b;
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+}
+
+.envelope-letter strong {
+    color: var(--color-pink-dark);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.letter-bottom-text {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.78rem;
+    font-style: italic;
+    letter-spacing: 0.3px;
+}
+
+/* =========================================
+   FRONT TRIANGLES
+========================================= */
+
+.envelope-front {
+    position: absolute;
+    z-index: 3;
+    inset: 0;
+
+    border-radius: 8px;
+
+    background: linear-gradient(
+        145deg,
+        #f5b3c9,
+        #ef9db9
+    );
+
+    clip-path: polygon(
+        0 0,
+        50% 57%,
+        100% 0,
+        100% 100%,
+        0 100%
+    );
+
+    pointer-events: none;
+}
+
+/* Side folds add a little depth */
+
+.envelope-front::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        35deg,
+        rgba(255, 255, 255, 0.16),
+        transparent 40%,
+        rgba(173, 67, 105, 0.06)
+    );
+}
+
+/* =========================================
+   TOP FLAP
+========================================= */
+
+.envelope-flap {
+    position: absolute;
+    z-index: 4;
+    inset: 0;
+
+    border-radius: 8px;
+
+    background: linear-gradient(
+        145deg,
+        #f6c2d3,
+        #e98cab
+    );
+
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        50% 59%
+    );
+
+    transform-origin: 50% 0%;
+    transform: rotateX(0deg);
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+    transition:
+        transform 0.7s ease,
+        opacity 0.25s ease;
+
+    pointer-events: none;
+}
+
+/* =========================================
+   HEART SEAL
+========================================= */
+
+.envelope-seal {
+    position: absolute;
+    z-index: 5;
+
+    top: 91px;
+    left: 50%;
+
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transform: translateX(-50%);
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle at 32% 25%,
+        #e98ba9,
+        #cb527d 70%,
+        #b93e6c
+    );
+
+    box-shadow:
+        0 5px 12px rgba(139, 48, 81, 0.23),
+        inset 0 1px 2px rgba(255, 255, 255, 0.45);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.4s ease;
+
+    pointer-events: none;
+}
+
+.envelope-seal span {
+    color: #fff8fb;
+    font-size: 1.5rem;
+    line-height: 1;
+
+    text-shadow: 0 1px 2px rgba(117, 30, 65, 0.2);
+}
+
+/* =========================================
+   OPEN ANIMATION
+========================================= */
+
+.envelope-button.open .envelope-flap {
+    transform: rotateX(180deg);
+    opacity: 0;
+}
+
+.envelope-button.open .envelope-seal {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.45);
+}
+
+.envelope-button.open .envelope-letter {
+    z-index: 6;
+    top: -32px;
+
+    transform: translateY(-22px);
+
+    box-shadow: 0 12px 25px rgba(93, 47, 63, 0.13);
+}
+
+/* =========================================
+   INSTRUCTION
+========================================= */
+
+.envelope-hint {
+    margin: 12px 0 0;
+
+    color: var(--color-pink-dark);
+    font-size: 0.82rem;
+    letter-spacing: 0.2px;
+
+    transition: opacity 0.3s ease;
+}
+
+/* =========================================
+   LOVE LETTER
+========================================= */
+
+.letter-content {
+    box-sizing: border-box;
+    width: 100%;
+
+    margin-top: 34px;
+    padding: 30px 25px;
+
+    text-align: left;
+
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            150deg,
+            rgba(255, 255, 255, 0.97),
+            rgba(255, 250, 250, 0.95)
+        );
+
+    box-shadow:
+        0 18px 50px rgba(174, 101, 130, 0.12),
+        0 2px 8px rgba(174, 101, 130, 0.04);
+
+    animation: letterAppear 0.7s ease both;
+}
+
+.letter-content[hidden] {
+    display: none;
+}
+
+.letter-top-heart {
+    margin: 0 0 16px;
+
+    text-align: center;
+    color: var(--color-pink-dark);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2rem;
+}
+
+.letter-greeting {
+    margin: 0 0 17px;
+
+    color: var(--color-pink-dark);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.letter-content > p:not(.letter-greeting):not(.letter-closing) {
+    margin: 0 0 17px;
+
+    color: var(--color-text);
+    font-size: 0.94rem;
+    line-height: 1.95;
+}
+
+.letter-closing {
+    margin: 25px 0;
+
+    color: var(--color-pink-dark);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    line-height: 1.9;
+    text-align: right;
+}
+
+#continue-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    margin-top: 12px;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.envelope-footer {
+    margin: 32px 0 0;
+
+    color: var(--color-muted);
+    font-size: 0.74rem;
+    letter-spacing: 0.5px;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes letterAppear {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+    .envelope-screen {
+        padding: 30px 16px;
+    }
+
+    .envelope-eyebrow {
+        font-size: 0.62rem;
+        letter-spacing: 2.3px;
+    }
+
+    .envelope-intro {
+        margin-bottom: 24px;
+        font-size: 0.9rem;
+    }
+
+    .envelope-scene {
+        padding-top: 38px;
+    }
+
+    .envelope-button {
+        width: min(100%, 310px);
+        height: 200px;
+    }
+
+    .envelope-letter {
+        height: 174px;
+    }
+
+    .envelope-seal {
+        top: 82px;
+        width: 43px;
+        height: 43px;
+    }
+
+    .envelope-button.open .envelope-letter {
+        top: -27px;
+        transform: translateY(-18px);
+    }
+
+    .letter-content {
+        margin-top: 28px;
+        padding: 25px 19px;
+        border-radius: 17px;
+    }
+
+    .letter-content > p:not(.letter-greeting):not(.letter-closing) {
+        font-size: 0.91rem;
+        line-height: 1.9;
+    }
+}
+
+@media (max-width: 360px) {
+    .envelope-screen {
+        padding: 26px 14px;
+    }
+
+    .envelope-button {
+        height: 184px;
+    }
+
+    .envelope-letter {
+        height: 160px;
+    }
+
+    .envelope-seal {
+        top: 75px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .envelope-button.open .envelope-letter {
+        top: -24px;
+    }
+
+    .letter-content {
+        padding: 22px 16px;
+    }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .envelope-letter,
+    .envelope-flap,
+    .envelope-seal,
+    .envelope-hint {
+        transition: none;
+    }
+
+    .letter-content {
+        animation: none;
+    }
+}

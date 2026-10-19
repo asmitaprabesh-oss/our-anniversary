@@ -1,0 +1,184 @@
+
+/* ===================================
+   ANNIVERSARY ENDING PAGE
+=================================== */
+
+.page-ending {
+    min-height: 100vh;
+    min-height: 100svh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background:
+        radial-gradient(ellipse at 50% 0%, #ffe1eb 0%, transparent 55%),
+        linear-gradient(145deg, #fffafd, #fff0f5);
+    color: #29212a;
+    font-family: inherit;
+}
+
+#fireworks {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.ending-card {
+    position: relative;
+    z-index: 1;
+    width: min(90%, 650px);
+    min-height: 100vh;
+    min-height: 100svh;
+    margin: 0 auto;
+    padding: 55px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.ending-heart {
+    font-size: 68px;
+    line-height: 1;
+    color: #e76d98;
+    margin-bottom: 20px;
+    animation: heartBeat 2s ease-in-out infinite;
+    text-shadow: 0 0 30px #f8b4cc;
+}
+
+.ending-label {
+    margin: 0 0 16px;
+    font-size: 11px;
+    letter-spacing: 4px;
+    font-weight: 600;
+    color: #a66b83;
+}
+
+.ending-card h1 {
+    margin: 0;
+    font-size: clamp(32px, 6vw, 54px);
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+}
+
+.ending-card h1 span {
+    display: block;
+    margin-top: 8px;
+    color: #d95786;
+}
+
+.ending-divider {
+    margin: 25px 0;
+    color: #df83a4;
+    letter-spacing: 7px;
+    font-size: 17px;
+}
+
+.ending-message,
+.ending-distance {
+    max-width: 490px;
+    margin: 0 0 17px;
+    font-size: 16px;
+    line-height: 1.9;
+    color: #65545e;
+}
+
+.ending-love {
+    margin: 13px 0 10px;
+    font-size: clamp(21px, 4vw, 27px);
+    font-weight: 700;
+    color: #c84476;
+}
+
+.ending-signature {
+    margin-top: 8px;
+    color: #987487;
+    font-size: 15px;
+    font-style: italic;
+}
+
+#celebrate-again {
+    margin-top: 30px;
+    padding: 13px 24px;
+    border: 1px solid #e9a0ba;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #bd4776;
+    font: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+#celebrate-again:hover {
+    transform: translateY(-2px);
+    background: #fff;
+}
+
+#celebrate-again:focus-visible,
+.ending-home:focus-visible {
+    outline: 2px solid #bd4776;
+    outline-offset: 4px;
+}
+
+.ending-home {
+    margin-top: 24px;
+    color: #8c7783;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.ending-home:hover {
+    color: #bd4776;
+}
+
+@keyframes heartBeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+/* Mobile layout */
+
+@media (max-width: 600px) {
+    .ending-card {
+        width: calc(100% - 36px);
+        padding: 40px 0;
+    }
+
+    .ending-heart {
+        font-size: 58px;
+    }
+
+    .ending-label {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    .ending-card h1 {
+        letter-spacing: -0.8px;
+    }
+
+    .ending-message,
+    .ending-distance {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ending-heart {
+        animation: none;
+    }
+
+    #celebrate-again {
+        transition: none;
+    }
+}
